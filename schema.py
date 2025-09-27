@@ -23,6 +23,12 @@ class MaritalStatusEnum(str, Enum):
     SEPARATED = "separated"
     DOMESTIC_PARTNERSHIP = "domestic_partnership"
 
+class Story(BaseModel):
+    """Represents a short story with a title, character, and body."""
+    title: str = Field(description="A creative and engaging title for the story.")
+    character_name: str = Field(description="The name of the main character.")
+    story_body: str = Field(description="The full narrative of the story, in a few paragraphs.")
+
 
 class Address(BaseModel):
     """Nested model for address information"""

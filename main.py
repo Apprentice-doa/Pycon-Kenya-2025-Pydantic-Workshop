@@ -3,6 +3,7 @@ from fastapi import FastAPI, Request, status, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 from schema import UserBioData, UserCreationResponse
+from ai_function import translate_story_to_swahili, generate_story_from_input
 
 
 app = FastAPI(
@@ -72,12 +73,14 @@ async def create_user(user_data: UserBioData):
     Returns the created user story.
     """
     try:
-        user_story  = f"User {user_data.first_name} {user_data.last_name} created successfully."
-        
+        #user_story  = f"User {user_data.first_name} {user_data.last_name} created successfully."
+        user_story = generate_story_from_input(user_data)
+        final_story = translate_story_to_swahili(user_story)
+
         # Return success response
         return UserCreationResponse(
             message="User created successfully",
-            user_story=user_story
+            user_story=final_story
         )
         
     except Exception as e:
