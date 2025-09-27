@@ -1,0 +1,4 @@
+certifi==2025.8.3
+uv==0.8.13
+fastapi[standard]>=0.117.1
+pydantic-settings>=2.11.0
