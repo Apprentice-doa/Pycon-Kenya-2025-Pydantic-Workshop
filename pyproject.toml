@@ -1,0 +1,10 @@
+[project]
+name = "pycon-kenya-2025-pydantic-workshop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.117.1",
+    "pydantic-settings>=2.11.0",
+]
