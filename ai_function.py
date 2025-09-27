@@ -6,7 +6,7 @@ from typing import Optional
 from schema import Story
 
 
-genai.configure(api_key="AIzaSyBXqhR-db3QjsvLEOnfZVF_Ry2x3OFRkUo")
+genai.configure(api_key="")
 
 
 async def generate_user_story(user: UserBioData) -> str:
